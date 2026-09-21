@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+lightgbm
+xgboost
+prophet
+shap
+matplotlib
+seaborn
+jupyter
+openpyxl
+joblib
