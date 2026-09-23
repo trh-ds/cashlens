@@ -25,7 +25,7 @@ jobs:
           - language: javascript-typescript
             glob: "frontend/**"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       # CodeQL fails when a language has no source files; skip until code exists.
       - uses: github/codeql-action/init@v3
         if: hashFiles(matrix.glob) != ''
