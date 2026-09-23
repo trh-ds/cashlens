@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        if: hashFiles('**/*.py') != ''
+        with:
+          python-version: "3.11"
+      - name: Install tools
+        if: hashFiles('**/*.py') != ''
+        run: pip install ruff pytest
+      - name: Ruff
+        if: hashFiles('**/*.py') != ''
+        run: ruff check .
+      - name: Pytest
+        if: hashFiles('tests/**') != ''
+        run: pytest
+
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        if: hashFiles('frontend/package.json') != ''
+        with:
+          node-version: "20"
+      - name: Lint and build frontend
+        if: hashFiles('frontend/package.json') != ''
+        working-directory: frontend
+        run: npm ci && npm run lint && npm run build

@@ -1,0 +1,42 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+
+# Data: never commit raw or real statements
+data/raw/
+*.pdf
+
+# Model artifacts
+models/
+*.pkl
+*.joblib
+*.onnx
+*.lgb
+mlruns/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

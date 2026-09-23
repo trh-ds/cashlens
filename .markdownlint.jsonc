@@ -1,0 +1,4 @@
+{
+  // Badge rows, tables and URLs make hard wrapping impractical.
+  "MD013": false
+}

@@ -1,0 +1,43 @@
+name: Bug report
+description: Something is broken
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not paste real bank statements, account numbers, GSTINs, PANs or any personal financial data.** Use synthetic or redacted samples only.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you expected vs. what you saw.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options: [frontend, backend, ml, agent, data, docs, ci]
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python/Node versions, commit SHA.
+  - type: checkboxes
+    id: data
+    attributes:
+      label: Data check
+      options:
+        - label: This issue contains no real financial or personal data.
+          required: true
